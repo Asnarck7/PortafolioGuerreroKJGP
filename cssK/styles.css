@@ -1,0 +1,461 @@
+/* Estilos generales */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+nav {
+  background-color: #222;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00ffff;
+}
+
+/* Estilos de la sección Header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #00aeff, #193bd4);
+}
+
+.foto-perfil {
+  width: 260px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 20px 2px rgba(0, 255, 255, 0.5);
+  margin-bottom: 20px;
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5); }
+  50% { transform: scale(1.1); box-shadow: 0 0 40px 10px rgba(0, 255, 255, 0.3); }
+  100% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5); }
+}
+
+/* Estilos de secciones */
+section {
+  max-width: 800px; /* Ancho máximo para que sean más angostas */
+  margin: 40px auto; /* Centra horizontalmente y añade margen vertical */
+  padding: 40px;
+  text-align: left; /* Alinea el texto a la izquierda */
+  background-color: #222; /* Fondo oscuro para resaltar el brillo */
+  border-radius: 10px;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3); /* Brillo blanco */
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideIn 1.2s forwards;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza transformaciones */
+}
+
+section:hover {
+  transform: scale(3.1); /* Agranda ligeramente la sección */
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.5); /* Aumenta el brillo */
+}
+
+/* Animación inicial */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contenido-acerca p,
+.contenido-acerca ul {
+  text-align: left; /* Asegura que todo el texto esté alineado a la izquierda */
+}
+
+.proyecto {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  width: 80%;
+  max-width: 500px;
+  background-color: #333;
+  border: 1px solid #555;
+  color: white;
+}
+
+/* Estilos para el botón con la clase 'btn-enviar' */
+form .btn-enviar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00ffff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo al pasar el mouse */
+form .btn-enviar:hover {
+  background-color: #ff0099;
+  transform: scale(1.05); /* Efecto de aumento de tamaño */
+}
+
+/* Estilo al hacer clic */
+form .btn-enviar:active {
+  transform: scale(1); /* Vuelve al tamaño original */
+}
+
+
+/* Footer */
+footer {
+  background-color: #222;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Efecto de luces */
+@keyframes lights {
+  0% { box-shadow: 0 0 15px 3px #ff0099; }
+  50% { box-shadow: 0 0 30px 8px #00ffff; }
+  100% { box-shadow: 0 0 15px 3px #ff0099; }
+}
+
+.foto-perfil:hover {
+  animation: lights 1.5s infinite;
+}
+
+/* Animación para las secciones */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para el enlace de la barra de navegación activa */
+nav ul li a.active {
+  color: #ff0099;
+  font-weight: bold;
+}
+
+/* estilos para la tabla */
+/* Estilos para la tabla */
+#tablaMensajes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#tablaMensajes th, #tablaMensajes td {
+  border: 1px solid #555;
+  padding: 10px;
+  text-align: left;
+}
+
+#tablaMensajes th {
+  background-color: #333;
+  color: white;
+}
+
+#tablaMensajes tr:nth-child(even) {
+  background-color: #222;
+}
+
+/* boton de eliminar */
+.eliminar-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave para transformación */
+}
+
+.eliminar-btn:hover {
+  background-color: darkred;
+  transform: scale(1.1) translateY(-5px); /* Aumenta ligeramente el tamaño y se desplaza hacia arriba */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Agrega sombra para efecto de elevación */
+}
+
+.eliminar-btn:active {
+  transform: scale(1) translateY(2px); /* Al hacer clic, el botón vuelve a su tamaño original y se desplaza hacia abajo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efecto de presionar el botón */
+}
+
+/* section certificado */
+#certificados p {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+.certificados-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.certificado {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificado:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certificado h3 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.certificado p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.certificado-icon {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.certificado-icon:hover {
+  transform: scale(1.05);
+}
+
+.certificado-icon.enlarged {
+  transform: scale(3); /* Agrandar la imagen */
+  z-index: 30; /* Asegura que la imagen se muestre encima de otras */
+  position: relative; /* Mantiene la imagen dentro de su contenedor */
+  cursor: zoom-out; /* Cambia el cursor cuando la imagen está ampliada */
+}
+
+/* tabla */
+/* Estilo para la tabla de estudios */
+#estudios {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.estudios-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #95f0dc57; /* Fondo transparente */
+  box-shadow: 0px 4px 10px rgb(255, 255, 255);
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+}
+
+.estudios-table th, .estudios-table td {
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.estudios-table th {
+  background-color: rgba(0, 123, 255, 0.4); /* Azul suave con transparencia */
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-shadow: 0px 0px 5px rgba(0, 123, 255, 0.8); /* Efecto suave de neón */
+}
+
+.estudios-table tr:nth-child(even) {
+  background-color: rgba(249, 249, 249, 0.2); /* Fondo de las filas con ligera transparencia */
+}
+
+.estudios-table tr:hover {
+  background-color: rgba(226, 226, 226, 0.5);
+  cursor: pointer;
+  transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+}
+
+.estudios-table td, .estudios-table th {
+  border: 1px solid #ddd;
+}
+
+.estudios-table td {
+  color: #333;
+  font-weight: 500;
+}
+
+.estudios-table tr:last-child td {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.estudios-table td:hover {
+  background-color: rgba(225, 225, 225, 0.7); /* Efecto hover en celdas */
+  color: #007BFF; /* Color de texto azul al hacer hover */
+  text-shadow: 0px 0px 5px rgba(0, 123, 255, 0.8); /* Efecto de neón en texto */
+}
+
+/* Proyectos */
+.btn-proyecto {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00ffff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none; /* Quitar subrayado en el enlace */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+/* Estilo al pasar el mouse */
+.btn-proyecto:hover {
+  background-color: #ff0099;
+  transform: scale(1.05); /* Efecto de aumento de tamaño */
+}
+
+/* Estilo al hacer clic */
+.btn-proyecto:active {
+  transform: scale(1); /* Vuelve al tamaño original */
+}
+
+/* Estilo para la sección de redes sociales */
+#redes-sociales {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#redes-sociales h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.red-social {
+  margin-bottom: 15px;
+}
+
+/* Estilo de los botones de redes sociales */
+/* Contenedor de la animación */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  font-size: 20px;
+  flex-direction: column;
+}
+
+/* Estilo de la imagen de carga */
+.loading-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilo de los botones de redes sociales */
+.btn-redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.btn-redes:hover {
+  background-color: #ddd;
+}
+
+/* Estilo de los iconos de redes sociales */
+.icono-redes {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
